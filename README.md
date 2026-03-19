@@ -54,12 +54,12 @@ All triggers are validated using **trusted external APIs**.
 
 
 💰 Insurance Plans
-  ->
-          | Plan     | Premium | Plan Factor |
-          |----------|---------|-------------|
-          | Basic    | 5%      | 0.8         |
-          | Standard | 7%      | 1.0         |
-          | Premium  | 10%     | 1.2         |
+  
+ | Plan     | Premium | Plan Factor |
+ |----------|---------|-------------|
+ | Basic    | 5%      | 0.8         |
+ | Standard | 7%      | 1.0         |
+ | Premium  | 10%     | 1.2         |
       
 Premiums are calculated on a **weekly basis**.
 
