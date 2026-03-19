@@ -97,11 +97,11 @@ This ensures meaningful payouts while maintaining sustainability.
 - Hourly Income = ₹100  
 - Lost Hours = 3  
 
-| Plan | Payout |
-|------|--------|
-| Basic | ₹240 |
-| Standard | ₹300 |
-| Premium | ₹360 |
+| Plan     | Payout |
+|----------|--------|
+| Basic    | ₹240   |
+| Standard | ₹300   |
+| Premium  | ₹360   |
 
 ---
 
