@@ -287,7 +287,7 @@ export default function Login({ onLogin }) {
 
     navigator.geolocation.getCurrentPosition(async (position) => {
       const { latitude, longitude } = position.coords || {};
-      const nearbyAreas = await fetchNearbyAreas(latitude, longitude);
+      const nearbyAreasPromise = fetchNearbyAreas(latitude, longitude);
 
       try {
         const res = await fetch(`${API_BASE}/reverse-geocode?lat=${latitude}&lng=${longitude}`);
@@ -306,6 +306,7 @@ export default function Login({ onLogin }) {
           }
 
           if (hasUsableLocation(enrichedLocation)) {
+            const nearbyAreas = await nearbyAreasPromise.catch(() => []);
             applyLiveLocationToProfile(enrichedLocation, true, nearbyAreas);
           } else {
             throw new Error(data?.error || 'Reverse geocoding failed');
@@ -345,11 +346,14 @@ export default function Login({ onLogin }) {
           }
 
           if (hasUsableLocation(location)) {
+            const nearbyAreas = await nearbyAreasPromise.catch(() => []);
             applyLiveLocationToProfile(location, true, nearbyAreas);
           } else {
+            const nearbyAreas = await nearbyAreasPromise.catch(() => []);
             applyCoordinateFallback(latitude, longitude, nearbyAreas);
           }
         } catch {
+          const nearbyAreas = await nearbyAreasPromise.catch(() => []);
           applyCoordinateFallback(latitude, longitude, nearbyAreas);
         }
       }
