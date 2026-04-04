@@ -25,7 +25,6 @@ const OTP_EXPIRY_MS = OTP_EXPIRY_SECONDS * 1000;
 const WEEKLY_SUBSCRIPTION_CYCLES = 52;
 const MONGODB_URI = String(process.env.MONGODB_URI || '').trim();
 const MONGODB_DB_NAME = String(process.env.MONGODB_DB_NAME || 'zyrosafe').trim();
-const MONGODB_REQUIRED = String(process.env.MONGODB_REQUIRED || 'true').toLowerCase() === 'true';
 const EXPOSE_DB_HEALTH = String(process.env.EXPOSE_DB_HEALTH || (IS_PRODUCTION ? 'false' : 'true')).toLowerCase() === 'true';
 const DB_HEALTH_TOKEN = String(process.env.DB_HEALTH_TOKEN || '').trim();
 const MONGODB_MAX_POOL_SIZE = Number(process.env.MONGODB_MAX_POOL_SIZE || 50);
@@ -41,6 +40,9 @@ const ADMIN_OVERRIDE_TOKEN = String(process.env.ADMIN_OVERRIDE_TOKEN || '').trim
 const ADMIN_LOGIN_EMAIL = String(process.env.ADMIN_LOGIN_EMAIL || 'vd0602@srmist.edu.in').trim().toLowerCase();
 const ADMIN_LOGIN_PASSWORD = String(process.env.ADMIN_LOGIN_PASSWORD || 'Code@123');
 const OFFICIAL_ALERT_TOKEN = String(process.env.OFFICIAL_ALERT_TOKEN || '').trim();
+const MONGODB_REQUIRED = IS_PRODUCTION
+	? String(process.env.MONGODB_REQUIRED || 'true').toLowerCase() === 'true'
+	: false;
 
 const razorpayInstance = new Razorpay({
 	key_id: process.env.RAZORPAY_KEY_ID || '',
