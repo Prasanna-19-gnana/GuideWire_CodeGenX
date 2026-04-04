@@ -11,7 +11,7 @@ While building it, I learned how to connect a React UI to a Node.js backend, how
 The project was built as a full-stack parametric insurance workflow with a live dashboard, fraud scoring, disruption detection, and automated payout handling. The core idea is to estimate compensation from lost working time instead of waiting for manual assessment:
 
 $$
-	ext{Payout} = \max\left(₹50, \frac{\text{Weekly Income}}{\text{Working Hours}} \times \text{Lost Hours} \times \text{Plan Factor}\right)
+  ext{Payout} = \max\left(₹50, \frac{\text{Weekly Income}}{\text{Working Hours}} \times \text{Lost Hours} \times \text{Plan Factor}\right)
 $$
 
 The biggest challenges were making the backend the single source of truth, keeping user actions stored in MongoDB Atlas, syncing live map movement with fraud checks, and keeping the UI responsive while the app handled notifications, support pages, and payout flows.
