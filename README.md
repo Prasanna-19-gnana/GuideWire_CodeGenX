@@ -1,4 +1,24 @@
-ZyroSafe – AI-Powered Parametric Insurance for Food Delivery Partners
+## Project Title
+
+ZyroSafe - AI-Powered Parametric Insurance for Food Delivery Partners
+
+## About the Project
+
+ZyroSafe started from a simple problem: delivery partners can lose a meaningful part of their weekly income when the city becomes unsafe or unworkable because of rain, heat, or social disruption. I wanted to build something that reacted to those conditions automatically instead of forcing people through a slow manual claims process.
+
+While building it, I learned how to connect a React UI to a Node.js backend, how to persist business actions in MongoDB Atlas, how to use live location and weather data responsibly, and how to trigger payouts only when the rules are satisfied. I also learned that reliability matters as much as features: duplicate accounts, backend restarts, and Node version mismatches all had to be handled before the system could feel stable.
+
+The project was built as a full-stack parametric insurance workflow with a live dashboard, fraud scoring, disruption detection, and automated payout handling. The core idea is to estimate compensation from lost working time instead of waiting for manual assessment:
+
+$$
+	ext{Payout} = \max\left(₹50, \frac{\text{Weekly Income}}{\text{Working Hours}} \times \text{Lost Hours} \times \text{Plan Factor}\right)
+$$
+
+The biggest challenges were making the backend the single source of truth, keeping user actions stored in MongoDB Atlas, syncing live map movement with fraud checks, and keeping the UI responsive while the app handled notifications, support pages, and payout flows.
+
+## Built With
+
+React, Vite, Node.js, Express, MongoDB Atlas, Leaflet, React-Leaflet, Tailwind CSS, Motion, Razorpay, Lucide React, Nodemailer
 
 📌 Overview
 ZyroSafe is an automated parametric insurance platform designed to protect **food delivery partners** (e.g., Swiggy, Zomato) from income loss caused by environmental and social disruptions.
