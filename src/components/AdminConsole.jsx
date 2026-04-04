@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'motion/react';
 import { AlertTriangle, Loader2, LogOut, RefreshCw, ShieldAlert, Siren } from 'lucide-react';
+import { getApiBaseUrl } from '../lib/apiBase';
 
-const API_BASE = 'http://localhost:3001/api';
+const API_BASE = getApiBaseUrl();
 
 const PRESETS = [
   { key: 'curfew', label: 'Curfew', reason: 'Curfew / Section 144 / zone closure', confidence: 0.98 },

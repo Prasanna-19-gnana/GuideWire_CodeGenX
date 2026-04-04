@@ -7,6 +7,7 @@ import {
   CloudLightning, Flame, Ban, Radio, ListOrdered, LayoutDashboard, User, Menu, Headset, X, Bell
 } from 'lucide-react';
 import IdleSimulationMap from './IdleSimulationMap';
+import { getApiBaseUrl } from '../lib/apiBase';
 import {
   calculatePayout,
   fetchDisruptionZone,
@@ -16,7 +17,7 @@ import {
 
 import earlyMorningBg from '../../clouds_bg.jpg';
 
-const API_BASE = 'http://localhost:3001/api';
+const API_BASE = getApiBaseUrl();
 const WEEKLY_PAYOUT_CAP = 1500;
 const API_TIMEOUT = 8000; // 8 second timeout for API calls
 const WEEKLY_PREMIUM_RATES = {

@@ -1,4 +1,6 @@
-const API_BASE = 'http://localhost:3001/api';
+import { getApiBaseUrl } from '../lib/apiBase';
+
+const API_BASE = getApiBaseUrl();
 
 async function fetchJson(url, options = {}) {
   const response = await fetch(url, {

@@ -5,12 +5,13 @@ import {
   CheckCircle, Loader2, RefreshCw, KeyRound,
   Smartphone, Fingerprint, User, MapPin, Bike, Lock, LogIn, FileText, X
 } from 'lucide-react';
+import { getApiBaseUrl } from '../lib/apiBase';
 import insuranceManagementPolicy from '../../insurance_management_policy.md?raw';
 
 /* ═══════════════════════════════════════════════════════════════
    CONFIG
    ═══════════════════════════════════════════════════════════════ */
-const API_BASE = 'http://localhost:3001/api';
+const API_BASE = getApiBaseUrl();
 const OTP_LENGTH = 6;
 const OTP_EXPIRY_SECONDS = 120;
 const PASSWORD_RULE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
